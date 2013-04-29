@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.license       = "MIT"
   s.author        = { "Fabio Pelosin" => "fabiopelosin@gmail.com" }
   s.source        = { :git => "https://github.com/Discontinuity-srl/DSUnixTask.git", :tag => s.version.to_s }
-  s.platform      = :osx, "10.8"
+  s.platform      = :osx, "10.7"
   s.requires_arc  = true
 
   s.subspec "Core" do |sp|

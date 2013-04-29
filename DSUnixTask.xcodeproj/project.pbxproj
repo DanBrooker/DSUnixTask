@@ -95,7 +95,7 @@
 		E56C067316E6248E00362561 /* DemoTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTests.h; sourceTree = "<group>"; };
 		E56C067416E6248E00362561 /* DemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
 		E56C067616E6248E00362561 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E5907B7A16E541ED009B3441 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Demo.app; path = "Client Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5907B7A16E541ED009B3441 /* Client Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Client Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5907B7D16E541ED009B3441 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E5907B8016E541ED009B3441 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E5907B8116E541ED009B3441 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -265,7 +265,7 @@
 		E5907B7B16E541ED009B3441 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5907B7A16E541ED009B3441 /* Demo.app */,
+				E5907B7A16E541ED009B3441 /* Client Demo.app */,
 				E5907B9A16E541EE009B3441 /* DemoTests.octest */,
 				E5907BC516E5444F009B3441 /* it.discontinuity.Service-Demo.xpc */,
 			);
@@ -356,7 +356,7 @@
 			);
 			name = "Client Demo";
 			productName = Demo;
-			productReference = E5907B7A16E541ED009B3441 /* Demo.app */;
+			productReference = E5907B7A16E541ED009B3441 /* Client Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E5907B9916E541EE009B3441 /* Tests */ = {
@@ -686,6 +686,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -699,6 +700,7 @@
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

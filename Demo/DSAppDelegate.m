@@ -36,11 +36,11 @@
 //------------------------------------------------------------------------------
 
 
-#if USE_XPC
-#define DSUnixTaskManager DSUnixTaskXPCManager
-#else
-#define DSUnixTaskManager DSDSUnixTaskLocalManager
-#endif
+//#if USE_XPC
+//#define DSUnixTaskManager DSUnixTaskXPCManager
+//#else
+//#define DSUnixTaskManager DSDSUnixTaskLocalManager
+//#endif
 
 #if DEMO_1
 #define DemoSelector runDemo1
@@ -61,8 +61,16 @@
   [self setStandardErrorLog:[NSMutableString new]];
   [self prettifyTextViews];
 
-  NSLog(@"Using %@", NSStringFromClass([DSUnixTaskManager class]));
+  NSLog(@"Using %@", NSStringFromClass([[self taskManagerClass] class]));
   [self DemoSelector];
+}
+
+- (Class)taskManagerClass
+{
+  if ([NSXPCInterface class] && USE_XPC)
+    return [DSUnixTaskXPCManager class];
+  else
+    return [DSUnixTaskSubProcessManager class];
 }
 
 //------------------------------------------------------------------------------
@@ -78,6 +86,8 @@
 - (void)runDemo1;
 {
   [self.demoLabel setStringValue:@"demo 1"];
+  
+  Class DSUnixTaskManager = [self taskManagerClass];
 
   [self setInputTask:[DSUnixTaskManager task]];
   [self.inputTask setCommand:@"/bin/cat"];
@@ -120,6 +130,8 @@
 - (void)runDemo2;
 {
   [self.demoLabel setStringValue:@"demo 2"];
+  
+  Class DSUnixTaskManager = [self taskManagerClass];
   
   NSMutableDictionary *environment = [NSMutableDictionary new];
   environment[@"NSUnbufferedIO"] = @"YES";
